@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E5391B;
+  --color-primary-dark: #C62818;
+  --color-primary-light: #FF5738;
+  --color-accent-orange: #FF6D00;
+  --color-accent-yellow: #FFC107;
+  --color-soft-bg: #FFF7F5;
+  --color-charcoal: #222222;
+  --color-muted-text: #6B7280;
+  --color-border-line: #E5E7EB;
+  --color-success: #16A34A;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #222222;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #222222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for clean supermarket UX */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ========================================================
+   STRUK KASIR THERMAL (POS 58mm / 80mm) & PRINT STYLES
+   ======================================================== */
+@media print {
+  /* Sembunyikan semua elemen navigasi, header toko, footer & peta */
+  header,
+  footer,
+  nav,
+  aside,
+  iframe,
+  button,
+  .print\:hidden {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Saat mode cetak struk aktif, sembunyikan seluruh elemen body selain struk */
+  body.printing-receipt * {
+    visibility: hidden !important;
+  }
+
+  body.printing-receipt #thermal-receipt,
+  body.printing-receipt #thermal-receipt * {
+    visibility: visible !important;
+  }
+
+  body.printing-receipt #thermal-receipt {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 78mm !important;
+    max-width: 78mm !important;
+    margin: 0 !important;
+    padding: 2mm 3mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Courier New', Courier, monospace, monospace !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @page {
+    size: auto;
+    margin: 2mm;
+  }
+}
+

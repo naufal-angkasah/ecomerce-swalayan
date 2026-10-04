@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5391B" />
+      <stop offset="100%" stop-color="#C62818" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge / Signage Frame -->
+  <rect x="2" y="2" width="316" height="76" rx="8" fill="url(#redGrad)" stroke="#FFC107" stroke-width="2.5" />
+  
+  <!-- Shopping Cart Icon with Groceries -->
+  <g transform="translate(14, 15)">
+    <!-- Cart wheels -->
+    <circle cx="16" cy="44" r="4.5" fill="#FFFFFF" />
+    <circle cx="34" cy="44" r="4.5" fill="#FFFFFF" />
+    <circle cx="16" cy="44" r="2" fill="#C62818" />
+    <circle cx="34" cy="44" r="2" fill="#C62818" />
+    <!-- Cart body & handle -->
+    <path d="M 2 8 L 8 8 L 14 36 L 38 36 L 44 16 L 11 16" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Groceries inside cart (bottles/box silhouette) -->
+    <rect x="16" y="5" width="7" height="11" rx="1.5" fill="#FFC107" />
+    <rect x="25" y="2" width="8" height="14" rx="1.5" fill="#FFFFFF" />
+    <circle cx="34" cy="8" r="4" fill="#FF6D00" />
+    <!-- Cart basket wire lines -->
+    <line x1="13" y1="23" x2="42" y2="23" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="14" y1="30" x2="39" y2="30" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Text Brand -->
+  <text x="74" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="900" font-size="27" fill="#FFFFFF" letter-spacing="-0.5">ALVIN</text>
+  <text x="156" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" font-size="27" fill="#FFC107" letter-spacing="-0.5">SWALAYAN</text>
+  <!-- Tagline -->
+  <text x="75" y="57" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="600" font-size="12" fill="#FFFFFF" letter-spacing="1.5" opacity="0.95">HEMAT &amp; BERKUALITAS</text>
+  <!-- Location small badge -->
+  <rect x="238" y="45" width="70" height="18" rx="3" fill="#C62818" stroke="#FFC107" stroke-width="0.8"/>
+  <text x="273" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-weight="600" font-size="9" fill="#FFFFFF" text-anchor="middle">BANDA ACEH</text>
+</svg>
