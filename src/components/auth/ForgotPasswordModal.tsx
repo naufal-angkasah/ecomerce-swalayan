@@ -101,7 +101,7 @@ export function ForgotPasswordModal({
   };
 
   const whatsappHelpUrl = `https://wa.me/${STORE_INFO.whatsapp}?text=${encodeURIComponent(
-    `Halo Admin Alvin Swalayan, saya butuh bantuan untuk atur ulang kata sandi akun saya (${email.trim() || 'email saya'}). Mohon bantuannya.`
+    `Halo Admin ${STORE_INFO.name}, saya butuh bantuan untuk atur ulang kata sandi akun saya (${email.trim() || 'email saya'}). Mohon bantuannya.`
   )}`;
 
   return (

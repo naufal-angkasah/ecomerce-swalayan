@@ -88,7 +88,7 @@ function LoginContent() {
 
   const handleQuickLoginAdmin = async () => {
     setLoading(true);
-    const res = await login('admin@alvinswalayan.com', 'AlvinSwalayan@2025!');
+    const res = await login('admin@demo.com', 'Swalayan@demo123!');
     if (res.success) {
       window.location.href = '/admin';
     } else {

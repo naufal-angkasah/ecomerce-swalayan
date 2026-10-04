@@ -110,7 +110,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   ADMIN
                 </span>
               </div>
-              <p className="text-[10px] text-gray-500">Alvin Swalayan Banda Aceh</p>
+              <p className="text-[10px] text-gray-500">
+                {process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo'} {process.env.NEXT_PUBLIC_STORE_CITY || 'Banda Aceh'}
+              </p>
             </div>
           </div>
 
@@ -126,8 +128,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   <ShieldCheck size={16} />
                 </div>
                 <div className="text-left leading-tight">
-                  <div className="font-bold text-gray-800">{user.name}</div>
-                  <div className="text-[10px] text-gray-400 font-mono truncate max-w-[140px]">{user.email}</div>
+                  <div className="font-bold text-gray-800">
+                    {user.name && !user.name.includes('Alvin') ? user.name : `Admin ${process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo'}`}
+                  </div>
+                  <div className="text-[10px] text-gray-400 font-mono truncate max-w-[140px]">
+                    {user.email && !user.email.includes('alvinswalayan') ? user.email : 'admin@demo.com'}
+                  </div>
                 </div>
               </div>
             )}

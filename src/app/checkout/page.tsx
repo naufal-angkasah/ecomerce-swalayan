@@ -115,7 +115,7 @@ export default function CheckoutPage() {
           Akun Admin Tidak Dapat Membuat Pesanan
         </h1>
         <p className="text-xs text-[#6B7280] mb-6 max-w-md mx-auto leading-relaxed">
-          Anda saat ini masuk sebagai <b>Admin Alvin Swalayan</b>. Pembuatan pesanan belanja hanya diperuntukkan bagi akun pelanggan.
+          Anda saat ini masuk sebagai <b>Admin {process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo'}</b>. Pembuatan pesanan belanja hanya diperuntukkan bagi akun pelanggan.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link

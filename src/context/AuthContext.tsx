@@ -130,6 +130,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
 
         // Akun admin tidak pernah kadaluwarsa (bebas session timeout)
+        if (parsed.role === 'admin') {
+          const storeName = process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo';
+          parsed.name = `Admin ${storeName}`;
+          if (!parsed.email || parsed.email.includes('alvinswalayan')) {
+            parsed.email = 'admin@demo.com';
+          }
+        }
         setUser(parsed);
 
         // Asynchronously check database to keep profile up to date
@@ -324,10 +331,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
         const data = await res.json();
         if (data.success) {
+          const storeName = process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo';
           const adminUser: UserProfile = {
             id: 'usr-admin',
-            name: 'Admin Alvin Swalayan',
-            email: cleanEmail,
+            name: `Admin ${storeName}`,
+            email: cleanEmail.includes('alvinswalayan') ? 'admin@demo.com' : cleanEmail,
             phone: '081269008899',
             role: 'admin',
             addresses: [],
@@ -725,10 +733,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const switchToAdmin = () => {
+    const storeName = process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo';
     const adminUser: UserProfile = {
       id: 'usr-admin',
-      name: 'Admin Alvin Swalayan',
-      email: 'admin@alvinswalayan.com',
+      name: `Admin ${storeName}`,
+      email: 'admin@demo.com',
       phone: '081269008899',
       role: 'admin',
       addresses: [],

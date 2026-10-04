@@ -115,7 +115,7 @@ export default function CartPage() {
           Akun Admin Tidak Dapat Belanja Mandiri
         </h1>
         <p className="text-xs text-[#6B7280] mb-6 max-w-md mx-auto leading-relaxed">
-          Anda saat ini masuk sebagai <b>Admin Alvin Swalayan</b> (<span className="text-gray-800 font-mono">admin@alvinswalayan.com</span>). Akun admin bertugas untuk mengelola produk, rak stok, dan memproses pesanan masuk pelanggan di Dashboard Admin.
+          Anda saat ini masuk sebagai <b>Admin {process.env.NEXT_PUBLIC_STORE_NAME || 'Swalayan Demo'}</b> (<span className="text-gray-800 font-mono">admin@demo.com</span>). Akun admin bertugas untuk mengelola produk, rak stok, dan memproses pesanan masuk pelanggan di Dashboard Admin.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
