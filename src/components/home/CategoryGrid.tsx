@@ -19,22 +19,22 @@ export function CategoryGrid() {
   return (
     <section className="my-8">
       {/* Section Header (Klik Indomaret style) */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2.5">
+      <div className="flex items-center justify-between gap-2.5 mb-4">
+        <div className="flex items-center gap-2.5 min-w-0">
           <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 border border-blue-100">
             <ShoppingBag size={18} />
           </div>
-          <div>
+          <div className="min-w-0">
             <h2 className="text-base sm:text-lg md:text-xl font-bold text-[#222222] leading-tight">
               Kategori Belanja
             </h2>
-            <p className="text-[11px] sm:text-xs text-[#6B7280]">
+            <p className="text-[11px] sm:text-xs text-[#6B7280] line-clamp-1 sm:line-clamp-none">
               Pilih kebutuhan harian keluarga Anda sesuai kategori
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           {/* Scroll Navigation Buttons for Desktop */}
           <div className="hidden sm:flex items-center gap-1">
             <button
@@ -57,7 +57,7 @@ export function CategoryGrid() {
 
           <Link
             href="/catalog"
-            className="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline ml-2"
+            className="text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 hover:underline whitespace-nowrap"
           >
             Lihat Semua
           </Link>

@@ -469,7 +469,7 @@ export default function OrdersPage() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleReorder(order)}
-                      className="px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-bold flex items-center gap-1.5 transition-colors"
+                      className="px-3 py-1.5 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors flex-1 sm:flex-initial"
                       title="Masukkan semua barang ke keranjang lagi"
                     >
                       <RefreshCw size={13} />
@@ -478,7 +478,7 @@ export default function OrdersPage() {
 
                     <Link
                       href={`/orders/${order.id}`}
-                      className="px-4 py-1.5 rounded-lg bg-[#E5391B] hover:bg-[#C62818] text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-xs"
+                      className="px-4 py-1.5 rounded-lg bg-[#E5391B] hover:bg-[#C62818] text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-xs flex-1 sm:flex-initial whitespace-nowrap"
                     >
                       <span>Lacak Pesanan</span>
                       <ArrowRight size={14} />

@@ -49,9 +49,9 @@ export function Logo({ className = '', variant = 'full' }: LogoProps) {
   return (
     <Link href="/" className={`inline-flex items-center gap-2.5 group select-none ${className}`}>
       {/* Signage Red Box with Glowing Yellow Accent Border */}
-      <div className="relative bg-gradient-to-br from-[#E5391B] to-[#C62818] rounded-lg px-2.5 py-1.5 flex items-center gap-2 border-2 border-[#FFC107] shadow-sm group-hover:brightness-105 transition-all">
+      <div className="relative bg-gradient-to-br from-[#E5391B] to-[#C62818] rounded-lg px-2 sm:px-2.5 py-1 sm:py-1.5 flex items-center gap-1.5 sm:gap-2 border-2 border-[#FFC107] shadow-sm group-hover:brightness-105 transition-all">
         {/* Shopping Cart Icon with groceries */}
-        <div className="w-8 h-8 flex-shrink-0">
+        <div className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0">
           <svg viewBox="0 0 40 40" fill="none" className="w-full h-full">
             <circle cx="14" cy="32" r="3.5" fill="#FFFFFF" />
             <circle cx="28" cy="32" r="3.5" fill="#FFFFFF" />
@@ -70,11 +70,11 @@ export function Logo({ className = '', variant = 'full' }: LogoProps) {
 
         {/* Text Details */}
         <div className="flex flex-col">
-          <div className="flex items-center gap-1.5 leading-none">
-            <span className="font-black text-white text-lg tracking-tight">ALVIN</span>
-            <span className="font-extrabold text-[#FFC107] text-lg tracking-tight">SWALAYAN</span>
+          <div className="flex items-center gap-1 sm:gap-1.5 leading-none">
+            <span className="font-black text-white text-sm sm:text-lg tracking-tight">ALVIN</span>
+            <span className="font-extrabold text-[#FFC107] text-sm sm:text-lg tracking-tight">SWALAYAN</span>
           </div>
-          <div className="flex items-center justify-between text-[9px] text-white/90 font-medium tracking-wider mt-0.5">
+          <div className="flex items-center justify-between text-[8px] sm:text-[9px] text-white/90 font-medium tracking-wider mt-0.5">
             <span>HEMAT &amp; BERKUALITAS</span>
           </div>
         </div>

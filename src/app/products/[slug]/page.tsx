@@ -410,7 +410,7 @@ export default function ProductDetailPage() {
           <h2 className="text-lg font-bold text-[#222222] mb-4">
             Produk Terkait Lainnya
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-3.5 md:gap-4">
             {relatedProducts.map((rel) => (
               <ProductCard key={rel.id} product={rel} />
             ))}

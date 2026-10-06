@@ -109,8 +109,8 @@ export function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Logo variant="full" />
@@ -163,12 +163,12 @@ export function Navbar() {
           </form>
 
           {/* Actions: Cart & Auth */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Cart or Admin Dashboard Action */}
             {isAdmin ? (
               <Link
                 href="/admin"
-                className="relative flex items-center gap-2 px-3 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-[#E5391B] transition-colors border border-red-200"
+                className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-red-50 hover:bg-red-100 text-[#E5391B] transition-colors border border-red-200"
                 title="Masuk ke Dashboard Admin Toko"
               >
                 <ShieldCheck size={20} className="text-[#E5391B]" />
@@ -186,13 +186,13 @@ export function Navbar() {
                     router.push('/cart');
                   }
                 }}
-                className="relative flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 text-[#222222] transition-colors cursor-pointer text-left"
+                className="relative flex items-center gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg hover:bg-gray-100 text-[#222222] transition-colors cursor-pointer text-left shrink-0"
                 title="Keranjang Belanja"
               >
                 <div className="relative">
-                  <ShoppingCart size={24} className="text-[#E5391B]" />
+                  <ShoppingCart size={22} className="text-[#E5391B] sm:w-6 sm:h-6" />
                   {user && totalItems > 0 && (
-                    <span className="absolute -top-1.5 -right-2 bg-[#FF6D00] text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-xs">
+                    <span className="absolute -top-1.5 -right-2 bg-[#FF6D00] text-white text-[10px] sm:text-[11px] font-black w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full flex items-center justify-center border-2 border-white shadow-xs">
                       {totalItems > 99 ? '99+' : totalItems}
                     </span>
                   )}
@@ -310,16 +310,16 @@ export function Navbar() {
                 )}
               </div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 <Link
                   href="/login"
-                  className="px-3 py-1.5 rounded-lg border border-[#E5391B] text-[#E5391B] text-xs font-bold hover:bg-[#FFF7F5] transition-colors"
+                  className="px-2.5 sm:px-3 py-1.5 rounded-lg border border-[#E5391B] text-[#E5391B] text-xs font-bold hover:bg-[#FFF7F5] transition-colors whitespace-nowrap"
                 >
                   Masuk
                 </Link>
                 <Link
                   href="/register"
-                  className="hidden sm:inline-block px-3 py-1.5 rounded-lg bg-[#E5391B] text-white text-xs font-bold hover:bg-[#C62818] transition-colors"
+                  className="hidden sm:inline-block px-3 py-1.5 rounded-lg bg-[#E5391B] text-white text-xs font-bold hover:bg-[#C62818] transition-colors whitespace-nowrap"
                 >
                   Daftar
                 </Link>
@@ -329,10 +329,10 @@ export function Navbar() {
             {/* Mobile Hamburger toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+              className="md:hidden p-1.5 sm:p-2 rounded-lg text-gray-700 hover:bg-gray-100 shrink-0"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileMenuOpen ? <X size={20} className="sm:w-[22px] sm:h-[22px]" /> : <Menu size={20} className="sm:w-[22px] sm:h-[22px]" />}
             </button>
           </div>
         </div>
@@ -344,12 +344,12 @@ export function Navbar() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cari beras, minyak, susu, kopi..."
-            className="w-full pl-10 pr-20 py-2.5 rounded-xl border-2 border-gray-300 focus:border-[#E5391B] focus:ring-4 focus:ring-red-500/10 focus:outline-none text-xs text-[#222222] bg-gray-50/90 focus:bg-white transition-all shadow-xs"
+            className="w-full pl-10 pr-20 py-2 sm:py-2.5 rounded-xl border-2 border-gray-300 focus:border-[#E5391B] focus:ring-4 focus:ring-red-500/10 focus:outline-none text-xs text-[#222222] bg-gray-50/90 focus:bg-white transition-all shadow-xs"
           />
           <Search size={16} className="absolute left-3 text-gray-500 pointer-events-none" />
           <button
             type="submit"
-            className="absolute right-1.5 bg-[#E5391B] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-xs hover:bg-[#C62818]"
+            className="absolute right-1.5 bg-[#E5391B] text-white px-3 py-1 sm:py-1.5 rounded-lg text-xs font-bold shadow-xs hover:bg-[#C62818]"
           >
             Cari
           </button>
@@ -358,24 +358,24 @@ export function Navbar() {
         {!hideCategoryBar && (
           <>
             {/* Mobile Quick Category Bar (Modern Supermarket App style) */}
-            <div className="md:hidden flex items-center gap-1.5 mt-2.5 overflow-x-auto scrollbar-none text-xs pb-1 [&::-webkit-scrollbar]:hidden">
+            <div className="md:hidden flex items-center gap-1.5 mt-2.5 overflow-x-auto scrollbar-none text-[11px] sm:text-xs pb-1 [&::-webkit-scrollbar]:hidden">
               <button
                 type="button"
                 onClick={() => setCategoryMenuOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 text-[#E5391B] font-bold border border-red-200 shrink-0 shadow-2xs"
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-red-50 text-[#E5391B] font-bold border border-red-200 shrink-0 shadow-2xs whitespace-nowrap"
               >
                 <LayoutGrid size={13} />
                 <span>Kategori</span>
               </button>
               <Link
                 href="/catalog?discount=true"
-                className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-50 text-amber-800 font-bold border border-amber-200 shrink-0 shadow-2xs"
+                className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-full bg-amber-50 text-amber-800 font-bold border border-amber-200 shrink-0 shadow-2xs whitespace-nowrap"
               >
                 <span>🔥 Diskon</span>
               </Link>
               <Link
                 href="/catalog"
-                className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 font-semibold shrink-0 hover:bg-gray-200"
+                className="px-2.5 sm:px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 font-semibold shrink-0 hover:bg-gray-200 whitespace-nowrap"
               >
                 Semua Produk
               </Link>
@@ -383,7 +383,7 @@ export function Navbar() {
                 <Link
                   key={cat.id}
                   href={`/catalog?category=${cat.id}`}
-                  className="px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 font-medium shrink-0 border border-gray-200 hover:border-gray-300 whitespace-nowrap"
+                  className="px-2.5 sm:px-3 py-1.5 rounded-full bg-gray-50 text-gray-600 font-medium shrink-0 border border-gray-200 hover:border-gray-300 whitespace-nowrap"
                 >
                   {cat.name}
                 </Link>
@@ -391,14 +391,14 @@ export function Navbar() {
             </div>
 
             {/* Mobile Alfagift-style Slim Delivery & Location Strip */}
-            <div className="md:hidden flex items-center justify-between mt-2 pt-2 border-t border-gray-100 text-[11px] text-gray-600">
-              <div className="flex items-center gap-1.5 truncate">
-                <MapPin size={12} className="text-[#E5391B] shrink-0" />
+            <div className="md:hidden flex items-center justify-between mt-2 pt-2 border-t border-gray-100 text-[10px] sm:text-[11px] text-gray-600 gap-2">
+              <div className="flex items-center gap-1 truncate min-w-0">
+                <MapPin size={11} className="text-[#E5391B] shrink-0" />
                 <span className="truncate">
                   Kirim ke: <b className="text-gray-900 font-extrabold">Banda Aceh &amp; Sekitarnya</b>
                 </span>
               </div>
-              <span className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded font-bold shrink-0">
+              <span className="text-[9px] sm:text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded font-bold shrink-0 whitespace-nowrap">
                 ● Buka 07.30 - 22.30 WIB
               </span>
             </div>

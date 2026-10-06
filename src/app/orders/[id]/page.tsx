@@ -572,7 +572,7 @@ export default function OrderDetailPage() {
 
               <div className="grid grid-cols-5 relative">
                 {/* Background connecting line */}
-                <div className="absolute top-4 left-6 right-6 h-1 bg-gray-200 -z-0">
+                <div className="absolute top-3.5 sm:top-4 left-4 sm:left-6 right-4 sm:right-6 h-1 bg-gray-200 -z-0">
                   <div
                     className="h-full bg-[#E5391B] transition-all duration-500"
                     style={{
@@ -586,18 +586,18 @@ export default function OrderDetailPage() {
                   const isCurrent = idx === currentStepIndex;
 
                   return (
-                    <div key={step.status} className="flex flex-col items-center text-center relative z-10">
+                    <div key={step.status} className="flex flex-col items-center text-center relative z-10 px-0.5">
                       <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
+                        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold border-2 transition-all ${
                           isPassed
                             ? 'bg-[#E5391B] border-[#FFC107] text-white shadow-xs'
                             : 'bg-white border-gray-300 text-gray-400'
                         }`}
                       >
-                        {isPassed ? <CheckCircle2 size={16} /> : idx + 1}
+                        {isPassed ? <CheckCircle2 size={14} className="sm:w-4 sm:h-4" /> : idx + 1}
                       </div>
                       <span
-                        className={`text-[11px] mt-2 font-bold leading-tight ${
+                        className={`text-[9px] sm:text-[11px] mt-1.5 sm:mt-2 font-bold leading-tight ${
                           isCurrent
                             ? 'text-[#E5391B]'
                             : isPassed

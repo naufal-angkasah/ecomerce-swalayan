@@ -54,14 +54,14 @@ export function ProductCard({ product }: ProductCardProps) {
     <div className="group relative bg-white rounded-lg border border-[#E5E7EB] hover:border-[#E5391B]/50 hover:shadow-md transition-all flex flex-col h-full overflow-hidden">
       {/* Discount Badge */}
       {discountPercent > 0 && (
-        <div className="absolute top-2.5 left-2.5 z-10 bg-[#E5391B] text-white text-xs sm:text-sm font-black px-2.5 py-1 rounded-md shadow-md border border-white/20 tracking-tight">
+        <div className="absolute top-2 sm:top-2.5 left-2 sm:left-2.5 z-10 bg-[#E5391B] text-white text-[10px] sm:text-xs font-black px-1.5 sm:px-2 py-0.5 sm:py-1 rounded sm:rounded-md shadow-xs border border-white/20 tracking-tight">
           -{discountPercent}%
         </div>
       )}
 
       {/* Stock warning ribbon if low stock */}
       {isLowStock && (
-        <div className="absolute top-2 right-2 z-10 bg-[#FF6D00] text-white text-[10px] font-semibold px-1.5 py-0.5 rounded shadow-sm">
+        <div className="absolute top-2 right-2 z-10 bg-[#FF6D00] text-white text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.5 rounded shadow-xs">
           Tersisa {product.stock}
         </div>
       )}
@@ -69,7 +69,7 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Product Image Link */}
       <Link
         href={`/products/${product.slug}`}
-        className="block relative aspect-square bg-[#FFF7F5] overflow-hidden p-3"
+        className="block relative aspect-square bg-[#FFF7F5] overflow-hidden p-2.5 sm:p-3"
       >
         <img
           src={product.image_url}
@@ -82,7 +82,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {isOutOfStock && (
           <div className="absolute inset-0 bg-white/75 flex items-center justify-center">
-            <span className="bg-gray-800 text-white text-xs font-bold px-2.5 py-1 rounded">
+            <span className="bg-gray-800 text-white text-[10px] sm:text-xs font-bold px-2 py-1 rounded">
               Stok Habis
             </span>
           </div>
@@ -90,11 +90,11 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
 
       {/* Content */}
-      <div className="p-3.5 flex flex-col flex-1">
+      <div className="p-2.5 sm:p-3.5 flex flex-col flex-1">
         {/* Brand & Unit */}
-        <div className="flex items-center justify-between text-[11px] text-[#6B7280] mb-1 font-medium">
+        <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-[#6B7280] mb-1 font-medium">
           <span className="truncate max-w-[65%]">{product.brand}</span>
-          <span className="text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded text-[10px]">
+          <span className="text-gray-500 bg-gray-100 px-1 sm:px-1.5 py-0.5 rounded text-[9px] sm:text-[10px]">
             {product.unit}
           </span>
         </div>
@@ -102,26 +102,26 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Product Name */}
         <Link
           href={`/products/${product.slug}`}
-          className="font-semibold text-sm text-[#222222] hover:text-[#E5391B] line-clamp-2 leading-snug mb-2 group-hover:underline"
+          className="font-semibold text-xs sm:text-sm text-[#222222] hover:text-[#E5391B] line-clamp-2 leading-snug mb-1.5 sm:mb-2 min-h-[2rem] sm:min-h-[2.5rem] group-hover:underline"
           title={product.name}
         >
           {product.name}
         </Link>
 
         {/* Price Area */}
-        <div className="mt-auto pt-2">
+        <div className="mt-auto pt-1.5 sm:pt-2">
           {product.discount_price && product.discount_price < product.price ? (
             <div className="flex flex-col">
-              <span className="text-xs text-[#6B7280] line-through">
+              <span className="text-[10px] sm:text-xs text-[#6B7280] line-through leading-tight">
                 {formatRupiah(product.price)}
               </span>
-              <span className="text-base font-extrabold text-[#E5391B]">
+              <span className="text-sm sm:text-base font-extrabold text-[#E5391B] leading-tight">
                 {formatRupiah(product.discount_price)}
               </span>
             </div>
           ) : (
             <div className="flex flex-col">
-              <span className="text-base font-extrabold text-[#222222]">
+              <span className="text-sm sm:text-base font-extrabold text-[#222222] leading-tight">
                 {formatRupiah(product.price)}
               </span>
             </div>
@@ -130,18 +130,18 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Error notification if cart limit reached */}
         {errorToast && (
-          <div className="mt-2 text-[11px] text-[#E5391B] bg-red-50 p-1.5 rounded flex items-center gap-1 font-medium">
+          <div className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] text-[#E5391B] bg-red-50 p-1 sm:p-1.5 rounded flex items-center gap-1 font-medium">
             <AlertCircle size={12} className="shrink-0" />
             <span className="truncate">{errorToast}</span>
           </div>
         )}
 
         {/* Add to Cart Button */}
-        <div className="mt-3">
+        <div className="mt-2.5 sm:mt-3">
           {isOutOfStock ? (
             <button
               disabled
-              className="w-full py-2 px-3 rounded bg-gray-100 text-gray-400 text-xs font-medium cursor-not-allowed text-center"
+              className="w-full py-1.5 sm:py-2 px-2 sm:px-3 rounded bg-gray-100 text-gray-400 text-[11px] sm:text-xs font-medium cursor-not-allowed text-center"
             >
               Stok Habis
             </button>
@@ -149,7 +149,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <button
               onClick={handleAdd}
               disabled={justAdded}
-              className={`w-full py-2 px-3 rounded text-xs font-bold flex items-center justify-center gap-1.5 transition-colors shadow-sm select-none ${
+              className={`w-full py-1.5 sm:py-2 px-2 sm:px-3 rounded text-[11px] sm:text-xs font-bold flex items-center justify-center gap-1 sm:gap-1.5 transition-colors shadow-xs select-none ${
                 justAdded
                   ? 'bg-[#16A34A] text-white'
                   : 'bg-[#E5391B] hover:bg-[#C62818] active:bg-[#B71C1C] text-white'
@@ -157,12 +157,12 @@ export function ProductCard({ product }: ProductCardProps) {
             >
               {justAdded ? (
                 <>
-                  <Check size={14} />
+                  <Check size={13} className="sm:w-3.5 sm:h-3.5" />
                   <span>Ditambahkan!</span>
                 </>
               ) : (
                 <>
-                  <ShoppingBag size={14} />
+                  <ShoppingBag size={13} className="sm:w-3.5 sm:h-3.5" />
                   <span>+ Keranjang</span>
                 </>
               )}

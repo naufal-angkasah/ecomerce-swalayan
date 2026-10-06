@@ -93,23 +93,24 @@ function CatalogContent() {
       {/* Main Grid: Sidebar Filters + Products */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
         {/* Mobile Filter Toggle Button */}
-        <div className="lg:hidden flex items-center justify-between gap-3 bg-white p-3 rounded-lg border border-[#E5E7EB]">
+        <div className="lg:hidden flex items-center justify-between gap-2 sm:gap-3 bg-white p-2.5 sm:p-3 rounded-lg border border-[#E5E7EB]">
           <button
             onClick={() => setMobileFilterOpen(true)}
-            className="flex items-center gap-2 text-xs font-bold text-[#E5391B] border border-[#E5391B] px-3 py-1.5 rounded-md"
+            className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-bold text-[#E5391B] border border-[#E5391B] px-2.5 sm:px-3 py-1.5 rounded-md hover:bg-red-50 transition-colors shrink-0"
           >
-            <Filter size={15} />
-            <span>Filter Kategori &amp; Brand</span>
+            <Filter size={14} />
+            <span className="hidden sm:inline">Filter Kategori &amp; Brand</span>
+            <span className="sm:hidden">Filter Produk</span>
           </button>
 
-          <div className="flex items-center gap-1.5 text-xs text-[#222222]">
-            <ArrowUpDown size={14} className="text-gray-500" />
+          <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-[#222222] min-w-0">
+            <ArrowUpDown size={13} className="text-gray-500 shrink-0" />
             <select
               value={sortOption}
               onChange={(e) =>
                 setSortOption(e.target.value as 'bestseller' | 'cheapest' | 'expensive' | 'newest')
               }
-              className="border border-[#E5E7EB] rounded-md px-2 py-1 text-xs font-medium focus:outline-none"
+              className="border border-[#E5E7EB] rounded-md px-1.5 sm:px-2 py-1 text-[11px] sm:text-xs font-medium focus:outline-none bg-white text-gray-800"
             >
               <option value="bestseller">Paling Laris</option>
               <option value="cheapest">Harga Termurah</option>
@@ -334,7 +335,7 @@ function CatalogContent() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 sm:gap-3.5 md:gap-4">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
